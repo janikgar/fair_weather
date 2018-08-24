@@ -60,3 +60,6 @@ gem 'jquery-rails'
 gem 'bootstrap-sass'
 gem 'httparty'
 gem 'figaro'
+gem 'pry-rails'
+gem 'better_errors', group: :development
+gem 'binding_of_caller'

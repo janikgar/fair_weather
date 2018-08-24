@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-1">
     <div class="well">
-      <h1>Look Up Your Local Forecast</h1>
+      <h2>Look Up Your Local Forecast</h2>
       <div>
         <%= form_tag index_path do %>
           <%= text_field_tag :zipcode, nil, placeholder: "zipcode", class:"form-control" %><br/>
@@ -16,13 +16,13 @@
   <div class="col-md-6 col-md-offset-3">
     <div class="well">
       <% if @location != nil && @location != "" && (@error =="" || @error == nil) %>
-        <h1>Forecast for <%= @location %></h1>
+        <h2>Forecast for <%= "#{@location}, #{@state} #{@zipcode}" %></h2>
         <div class="row">
           <div class="col-md-7">
-            <p><em>What's the weather like?</em></p>
-            <p>Temperature: <%= @temp%>° F</p>
-            <p>Cloud Cover: <%= @cloudiness %>%</p>
-            <p>Wind: <%= @windiness %> mph</p>
+            <em>What's the weather like?</em><br />
+            Temperature: <%= @temp%>° F<br />
+            Cloud Cover: <%= @cloudiness %>%<br />
+            Wind: <%= @windiness %> mph<br />
           </div>
           <div class="col-md-5">
             <p>
@@ -32,9 +32,9 @@
           </div>
         </div> 
       <% elsif @status =="404" %>
-        <p>Error: <%= @error %>. Please Try Again.</p>
+        Error: <%= @error %>. Please Try Again.<br />
       <% else %>
-        <p>Enter a zip code to check the weather!</p>
+        Enter a zip code to check the weather!<br />
       <% end %>
     </div>
   </div>

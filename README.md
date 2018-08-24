@@ -1,24 +1,26 @@
-# README
+# Fair Weather
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a basic app for checking the weather based on US ZIP code. It interfaces with the Open Weather API.
 
-Things you may want to cover:
+## Requirements
+* Ruby 2.3.3
+### Gems
+* jquery-rails
+* bootstrap-sass
+* httparty
+* figaro
+### Development gems
+* pry-rails
+* better_errors
+* binding_of_caller
 
-* Ruby version
+## Running locally
+You must request API credentials from Google Maps (for geolocation) and Open Weather API. After cloning and running `bundle install`, run `figaro install`. This will create `application.yml` in the `config` directory.
 
-* System dependencies
+Add the following keys with your API credentials:
+```
+openweather_api_key: <your OpenWeather API key>
+google_api_key: <your Google API key>
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Then run `rails s` to run the app. Navigate to `localhost:3000` to run.
